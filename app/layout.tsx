@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: "Media Mind | Data-Driven Marketing",
@@ -13,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className="bg-black antialiased selection:bg-purple-500 selection:text-white">
+      <body className={`${inter.variable} bg-black antialiased selection:bg-purple-500 selection:text-white font-sans`}>
         {children}
       </body>
     </html>
