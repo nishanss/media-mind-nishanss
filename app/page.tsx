@@ -7,6 +7,8 @@ import { ContactForm } from "@/components/ui/contact-form";
 import { Navbar } from "@/components/ui/navbar";
 import { HeroParallax } from "@/components/ui/hero-parallax";
 import { ServicesSection } from "@/components/sections/services-section";
+import { TestimonialsSection } from "@/components/sections/testimonials-section";
+import { StatsSection } from "@/components/sections/stats-section";
 import { SectionDivider } from "@/components/ui/section-divider";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
 import { 
@@ -15,6 +17,7 @@ import {
   TechBackground, 
   ContactBackground 
 } from "@/components/ui/section-backgrounds";
+import { AnimatedBlobs } from "@/components/ui/animated-blobs";
 
 const processSteps = [
   {
@@ -51,9 +54,8 @@ export default function Home() {
     <>
       <Navbar />
       <main className="relative bg-black flex flex-col">
-        {/* WhatsApp Button */}
         
-        <a  href="https://wa.me/"
+        <a  href="https://wa.me/971562520106"
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-8 right-8 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-200 group"
@@ -63,12 +65,20 @@ export default function Home() {
           </svg>
         </a>
 
-        {/* HERO - Pure Black */}
+        {/* HERO */}
         <div className="relative bg-black">
+          <AnimatedBlobs />
           <HeroParallax />
         </div>
 
-        {/* SERVICES - Dark Gray with Purple Accent */}
+        {/* STATS */}
+        <SectionWrapper backgroundColor="#050505" id="stats">
+          <StatsSection />
+        </SectionWrapper>
+
+        <SectionDivider />
+
+        {/* SERVICES */}
         <SectionWrapper backgroundColor="#0a0a0a" id="services">
           <ServicesBackground />
           <div className="relative z-10">
@@ -78,8 +88,18 @@ export default function Home() {
 
         <SectionDivider />
 
-        {/* PROCESS - Subtle Purple Tint */}
-        <SectionWrapper backgroundColor="#0d0a12" id="process">
+        {/* TESTIMONIALS */}
+        <SectionWrapper backgroundColor="#0d0a12" id="testimonials">
+          <AnimatedBlobs />
+          <div className="relative z-10">
+            <TestimonialsSection />
+          </div>
+        </SectionWrapper>
+
+        <SectionDivider />
+
+        {/* PROCESS */}
+        <SectionWrapper backgroundColor="#0a0510" id="process">
           <ProcessBackground />
           <div className="relative z-10">
             <StickyScroll content={processSteps} />
@@ -88,7 +108,7 @@ export default function Home() {
 
         <SectionDivider />
 
-        {/* TECH STACK - Dark Blue Tint */}
+        {/* TECH STACK */}
         <SectionWrapper backgroundColor="#070a15" id="tech">
           <TechBackground />
           <div className="relative z-10">
@@ -98,15 +118,15 @@ export default function Home() {
 
         <SectionDivider />
 
-        {/* CONTACT - Purple Gradient */}
-<SectionWrapper backgroundColor="#0a0510" id="contact" isLast={true}>
-  <ContactBackground />
-  <div className="relative z-10">
-    <ContactForm />
-  </div>
-</SectionWrapper>
+        {/* CONTACT */}
+        <SectionWrapper backgroundColor="#0a0510" id="contact" isLast={true}>
+          <ContactBackground />
+          <div className="relative z-10">
+            <ContactForm />
+          </div>
+        </SectionWrapper>
 
-        {/* FOOTER - Pure Black */}
+        {/* FOOTER */}
         <footer className="relative py-10 bg-black border-t border-neutral-800 text-center text-neutral-500 z-10">
           <p>© 2026 Media Mind. All rights reserved.</p>
         </footer>
