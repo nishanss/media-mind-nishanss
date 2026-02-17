@@ -45,7 +45,7 @@ const techStack = [
   { name: "Shopify" },
   { name: "Figma" },
   { name: "Adobe Premiere Pro" },
-  { name: "React & Next.js" },
+  { name: "React & Next.js" }, 
   { name: "TailwindCSS" },
 ];
 
@@ -65,20 +65,17 @@ export default function Home() {
           </svg>
         </a>
 
-        {/* HERO */}
         <div className="relative bg-black">
           <AnimatedBlobs />
           <HeroParallax />
         </div>
 
-        {/* STATS */}
         <SectionWrapper backgroundColor="#050505" id="stats">
           <StatsSection />
         </SectionWrapper>
 
         <SectionDivider />
 
-        {/* SERVICES */}
         <SectionWrapper backgroundColor="#0a0a0a" id="services">
           <ServicesBackground />
           <div className="relative z-10">
@@ -88,7 +85,6 @@ export default function Home() {
 
         <SectionDivider />
 
-        {/* TESTIMONIALS */}
         <SectionWrapper backgroundColor="#0d0a12" id="testimonials">
           <AnimatedBlobs />
           <div className="relative z-10">
@@ -98,7 +94,6 @@ export default function Home() {
 
         <SectionDivider />
 
-        {/* PROCESS */}
         <SectionWrapper backgroundColor="#0a0510" id="process">
           <ProcessBackground />
           <div className="relative z-10">
@@ -108,7 +103,6 @@ export default function Home() {
 
         <SectionDivider />
 
-        {/* TECH STACK */}
         <SectionWrapper backgroundColor="#070a15" id="tech">
           <TechBackground />
           <div className="relative z-10">
@@ -118,7 +112,6 @@ export default function Home() {
 
         <SectionDivider />
 
-        {/* CONTACT */}
         <SectionWrapper backgroundColor="#0a0510" id="contact" isLast={true}>
           <ContactBackground />
           <div className="relative z-10">
@@ -126,7 +119,6 @@ export default function Home() {
           </div>
         </SectionWrapper>
 
-        {/* FOOTER */}
         <footer className="relative py-10 bg-black border-t border-neutral-800 text-center text-neutral-500 z-10">
           <p>© 2026 Media Mind. All rights reserved.</p>
         </footer>

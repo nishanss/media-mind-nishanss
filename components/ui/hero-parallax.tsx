@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { BackgroundBeams } from "./background-beams";
 import { LetterReveal } from "./letter-reveal";
 import { TextReveal } from "./text-reveal";
+import { GrowthGraph } from "./growth-graph";
 
 export const HeroParallax = () => {
   const { scrollY } = useScroll();
@@ -17,7 +18,6 @@ export const HeroParallax = () => {
     <section className="h-screen w-full flex flex-col items-center justify-center relative px-4 pt-20 overflow-hidden noise-bg">
       <BackgroundBeams />
       
-      {/* Floating gradient orbs */}
       <motion.div
         style={{ y: y1 }}
         className="absolute top-1/4 -left-20 w-72 h-72 bg-purple-500/30 rounded-full blur-3xl"
@@ -66,7 +66,16 @@ export const HeroParallax = () => {
           </button>
         </motion.div>
 
-        {/* Floating stats */}
+
+        <motion.div
+            initial={{ opacity: 0, rotateX: 20, z: -100 }}
+            animate={{ opacity: 1, rotateX: 0, z: 0 }}
+            transition={{ delay: 1, duration: 1 }}
+            className="mt-16 relative z-20 perspective-1000"
+        >
+            <GrowthGraph />
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

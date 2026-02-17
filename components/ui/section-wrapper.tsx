@@ -6,7 +6,7 @@ interface SectionWrapperProps {
   children: React.ReactNode;
   backgroundColor: string;
   id?: string;
-  isLast?: boolean; // NEW PROP
+  isLast?: boolean;
 }
 
 export const SectionWrapper = ({ children, backgroundColor, id, isLast = false }: SectionWrapperProps) => {
@@ -18,7 +18,6 @@ export const SectionWrapper = ({ children, backgroundColor, id, isLast = false }
 
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
   
-  // For last section, keep opacity at 1 when scrolled into view
   const opacity = useTransform(
     scrollYProgress, 
     isLast ? [0, 0.2, 1] : [0, 0.2, 0.8, 1], 

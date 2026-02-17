@@ -21,7 +21,6 @@ export const ContactForm = () => {
   return (
     <div className="py-20 px-4 relative">
       <div className="max-w-2xl mx-auto relative">
-        {/* Glassmorphism card */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,7 +31,7 @@ export const ContactForm = () => {
             Get Your Free 5-Point Audit
           </h2>
           <p className="text-neutral-400 text-center mb-10 text-lg">
-            We'll tell you exactly what's working and what's not.
+          Not sure where to start? We'll tell you exactly what's working and what's not.
           </p>
           
           <form onSubmit={handleSubmit} className="space-y-6">

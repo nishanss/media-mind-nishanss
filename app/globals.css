@@ -42,7 +42,6 @@ body {
   animation-play-state: paused;
 }
 
-/* Shimmer effect for text */
 @keyframes shimmer {
   0% {
     background-position: -500px 0;
@@ -64,8 +63,6 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
 }
-
-/* Noise texture */
 .noise-bg::before {
   content: "";
   position: absolute;
@@ -75,24 +72,20 @@ body {
   pointer-events: none;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Apple-style easing curves */
 :root {
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
   --ease-spring: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* Smooth momentum scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Remove default scroll for Lenis */
 html.lenis {
   height: auto;
 }
