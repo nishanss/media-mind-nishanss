@@ -14,24 +14,47 @@ export const HeroParallax = () => {
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
   const scale = useTransform(scrollY, [0, 300], [1, 0.95]);
 
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center relative px-4 pt-20 overflow-hidden noise-bg">
+    <section className="min-h-screen w-full flex flex-col items-center justify-center relative px-4 pt-24 pb-16 noise-bg">
       <BackgroundBeams />
       
       <motion.div
         style={{ y: y1 }}
-        className="absolute top-1/4 -left-20 w-72 h-72 bg-purple-500/30 rounded-full blur-3xl"
+        className="absolute top-1/4 -left-20 w-72 h-72 bg-purple-500/30 rounded-full blur-3xl pointer-events-none"
       />
       <motion.div
         style={{ y: y2 }}
-        className="absolute bottom-1/4 -right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"
+        className="absolute bottom-1/4 -right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"
       />
 
       <motion.div
         style={{ opacity, scale }}
         className="z-10 text-center relative"
       >
-        <div className="mb-4"> <LetterReveal text="Stop Guessing." className="text-5xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 pt-20 pb-5" /> </div> <div className="mb-6"> <LetterReveal text="Start Growing." delay={0.5} className="text-5xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 -mt-8 pb-5" /> </div> <TextReveal text="Data-Driven Marketing that Scales. We combine Performance Marketing, CRM Optimization, and High-Conversion Design to turn your traffic into predictable revenue." delay={1} className="mt-6 text-neutral-400 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed pb-2" />
+        <div className="mb-4">
+          <LetterReveal
+            text="Stop Guessing."
+            className="text-5xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 pt-20 pb-5"
+          />
+        </div>
+        
+        <div className="mb-6">
+          <LetterReveal
+            text="Start Growing."
+            delay={0.5}
+            className="text-5xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 -mt-8 pb-5"
+          />
+        </div>
+
+        <TextReveal
+          text="Data-Driven Marketing that Scales. We combine Performance Marketing, CRM Optimization, and High-Conversion Design to turn your traffic into predictable revenue."
+          delay={1}
+          className="mt-6 text-neutral-400 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed pb-2"
+        />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -40,7 +63,7 @@ export const HeroParallax = () => {
           className="mt-10"
         >
           <button
-            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={scrollToContact}
             className="group px-8 py-4 rounded-full bg-white text-black font-bold relative overflow-hidden transition-all duration-300 shadow-2xl hover:shadow-purple-500/50"
           >
             <span className="relative z-10 group-hover:text-white transition-colors duration-300">

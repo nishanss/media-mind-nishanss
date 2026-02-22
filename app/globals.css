@@ -23,6 +23,11 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+a, button {
+  cursor: pointer;
 }
 
 @keyframes loop-scroll {
@@ -63,6 +68,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
 }
+
 .noise-bg::before {
   content: "";
   position: absolute;
@@ -80,10 +86,6 @@ html {
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
   --ease-spring: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 html.lenis {

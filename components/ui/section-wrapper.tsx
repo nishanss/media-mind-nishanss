@@ -26,7 +26,7 @@ export const SectionWrapper = ({ children, backgroundColor, id, isLast = false, 
   const scale = useTransform(
     scrollYProgress,
     isLast ? [0, 0.2, 1] : [0, 0.15, 1],
-    isLast ? [0.95, 1, 1] : [0.97, 1, 1]
+    isLast ? [0.97, 1, 1] : [0.98, 1, 1]
   );
 
   return (
@@ -38,7 +38,7 @@ export const SectionWrapper = ({ children, backgroundColor, id, isLast = false, 
         scale,
         backgroundColor
       }}
-      className="relative will-change-transform"
+      className="relative isolate will-change-transform"
     >
       {fullWidth ? (
         <div className="py-20">
