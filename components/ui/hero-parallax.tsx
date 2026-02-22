@@ -31,26 +31,7 @@ export const HeroParallax = () => {
         style={{ opacity, scale }}
         className="z-10 text-center relative"
       >
-        <div className="mb-4">
-          <LetterReveal
-            text="Stop Guessing."
-            className="text-5xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400"
-          />
-        </div>
-        
-        <div className="mb-6">
-          <LetterReveal
-            text="Start Growing."
-            delay={0.5}
-            className="text-5xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400"
-          />
-        </div>
-
-        <TextReveal
-          text="Data-Driven Marketing that Scales. We combine Performance Marketing, CRM Optimization, and High-Conversion Design to turn your traffic into predictable revenue."
-          delay={1}
-          className="mt-6 text-neutral-400 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed"
-        />
+        <div className="mb-4"> <LetterReveal text="Stop Guessing." className="text-5xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 pt-20 pb-5" /> </div> <div className="mb-6"> <LetterReveal text="Start Growing." delay={0.5} className="text-5xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 -mt-8 pb-5" /> </div> <TextReveal text="Data-Driven Marketing that Scales. We combine Performance Marketing, CRM Optimization, and High-Conversion Design to turn your traffic into predictable revenue." delay={1} className="mt-6 text-neutral-400 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed pb-2" />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -58,7 +39,10 @@ export const HeroParallax = () => {
           transition={{ delay: 1.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mt-10"
         >
-          <button className="group px-8 py-4 rounded-full bg-white text-black font-bold relative overflow-hidden transition-all duration-300 shadow-2xl hover:shadow-purple-500/50">
+          <button
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            className="group px-8 py-4 rounded-full bg-white text-black font-bold relative overflow-hidden transition-all duration-300 shadow-2xl hover:shadow-purple-500/50"
+          >
             <span className="relative z-10 group-hover:text-white transition-colors duration-300">
               Get My Free Growth Roadmap
             </span>
@@ -66,14 +50,13 @@ export const HeroParallax = () => {
           </button>
         </motion.div>
 
-
         <motion.div
-            initial={{ opacity: 0, rotateX: 20, z: -100 }}
-            animate={{ opacity: 1, rotateX: 0, z: 0 }}
-            transition={{ delay: 1, duration: 1 }}
-            className="mt-16 relative z-20 perspective-1000"
+          initial={{ opacity: 0, rotateX: 20, z: -100 }}
+          animate={{ opacity: 1, rotateX: 0, z: 0 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="mt-16 relative z-20 perspective-1000 flex justify-center"
         >
-            <GrowthGraph />
+          <GrowthGraph />
         </motion.div>
 
         <motion.div

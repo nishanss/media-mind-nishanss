@@ -9,14 +9,7 @@ import { HeroParallax } from "@/components/ui/hero-parallax";
 import { ServicesSection } from "@/components/sections/services-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { StatsSection } from "@/components/sections/stats-section";
-import { SectionDivider } from "@/components/ui/section-divider";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
-import { 
-  ServicesBackground, 
-  ProcessBackground, 
-  TechBackground, 
-  ContactBackground 
-} from "@/components/ui/section-backgrounds";
 import { AnimatedBlobs } from "@/components/ui/animated-blobs";
 
 const processSteps = [
@@ -49,13 +42,21 @@ const techStack = [
   { name: "TailwindCSS" },
 ];
 
+const GlowDivider = () => (
+  <div className="relative w-full h-px my-0">
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-400/10 to-transparent blur-sm" />
+  </div>
+);
+
 export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="relative bg-black flex flex-col">
+      <main className="relative bg-[#080808] flex flex-col">
         
-        <a  href="https://wa.me/"
+        <a
+          href="https://wa.me/"
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-8 right-8 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-200 group"
@@ -65,61 +66,75 @@ export default function Home() {
           </svg>
         </a>
 
-        <div className="relative bg-black">
+        <div className="relative">
           <AnimatedBlobs />
           <HeroParallax />
         </div>
 
-        <SectionWrapper backgroundColor="#050505" id="stats">
+        <GlowDivider />
+
+        <SectionWrapper backgroundColor="transparent" id="stats">
           <StatsSection />
         </SectionWrapper>
 
-        <SectionDivider />
+        <GlowDivider />
 
-        <SectionWrapper backgroundColor="#0a0a0a" id="services">
-          <ServicesBackground />
+        <SectionWrapper backgroundColor="transparent" id="services">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-1/2 -translate-y-1/2 -left-40 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-3xl" />
+          </div>
           <div className="relative z-10">
             <ServicesSection />
           </div>
         </SectionWrapper>
 
-        <SectionDivider />
+        <GlowDivider />
 
-        <SectionWrapper backgroundColor="#0d0a12" id="testimonials">
-          <AnimatedBlobs />
+        <SectionWrapper backgroundColor="transparent" id="testimonials">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-purple-500/8 rounded-full blur-3xl" />
+          </div>
           <div className="relative z-10">
             <TestimonialsSection />
           </div>
         </SectionWrapper>
 
-        <SectionDivider />
+        <GlowDivider />
 
-        <SectionWrapper backgroundColor="#0a0510" id="process">
-          <ProcessBackground />
+        <SectionWrapper backgroundColor="transparent" id="process">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-20 right-20 w-72 h-72 bg-pink-500/8 rounded-full blur-3xl" />
+            <div className="absolute bottom-20 left-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+          </div>
           <div className="relative z-10">
             <StickyScroll content={processSteps} />
           </div>
         </SectionWrapper>
 
-        <SectionDivider />
-
-        <SectionWrapper backgroundColor="#070a15" id="tech">
-          <TechBackground />
+        <GlowDivider />
+        
+        <SectionWrapper backgroundColor="transparent" id="tech" fullWidth={true}>
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-blue-500/8 rounded-full blur-3xl" />
+          </div>
           <div className="relative z-10">
             <InfiniteMovingCards items={techStack} />
           </div>
         </SectionWrapper>
 
-        <SectionDivider />
+        <GlowDivider />
 
-        <SectionWrapper backgroundColor="#0a0510" id="contact" isLast={true}>
-          <ContactBackground />
+        <SectionWrapper backgroundColor="transparent" id="contact" isLast={true}>
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(147,51,234,0.12),transparent_60%)]" />
+          </div>
           <div className="relative z-10">
             <ContactForm />
           </div>
         </SectionWrapper>
 
-        <footer className="relative py-10 bg-black border-t border-neutral-800 text-center text-neutral-500 z-10">
+        <footer className="relative py-10 bg-transparent border-t border-neutral-800/50 text-center text-neutral-500 z-10">
           <p>© 2026 Media Mind. All rights reserved.</p>
         </footer>
       </main>
