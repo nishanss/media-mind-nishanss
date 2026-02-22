@@ -119,13 +119,19 @@ export default function CardPage() {
               </a>
             </motion.div>
 
-            <motion.button
+            {/* <motion.button
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.85 }}
               onClick={handleSave}
               className="w-full py-4 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold text-base shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
-            >
+            > */}
+              <motion.button
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  onClick={handleSave}
+  className="w-full py-4 bg-white text-black font-bold rounded-2xl flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-shadow hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]"
+>
               {saved ? "✓ Contact Saved!" : "Save Contact"}
             </motion.button>
           </div>

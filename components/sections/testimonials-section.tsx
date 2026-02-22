@@ -66,7 +66,7 @@ export const TestimonialsSection = () => {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="text-center mb-16"
       >
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tighter">
           Trusted by Growth Leaders
         </h2>
         <TextReveal

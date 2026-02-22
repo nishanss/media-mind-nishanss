@@ -11,7 +11,7 @@ export const InfiniteMovingCards = ({
       <h2 className="text-3xl md:text-5xl font-bold text-white mb-10 text-center px-4">
         Powered by the Best in the Industry
       </h2>
-      <div className="relative w-screen left-1/2 -translate-x-1/2 flex overflow-hidden space-x-8 group">
+      <div className="relative w-full left-1/2 -translate-x-1/2 flex overflow-hidden space-x-8 group">
         <div className="flex space-x-8 animate-loop-scroll group-hover:paused">
           {items.concat(items).map((item, idx) => (
             <div
