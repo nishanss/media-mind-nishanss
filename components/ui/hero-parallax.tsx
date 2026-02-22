@@ -19,7 +19,7 @@ export const HeroParallax = () => {
   };
 
   return (
-    <section className="min-h-screen w-full flex flex-col items-center justify-center relative px-4 pt-24 pb-16 noise-bg">
+    <section className="min-h-screen w-full flex flex-col items-center justify-center relative px-4 pt-24 pb-16 noise-bg overflow-hidden">
       <BackgroundBeams />
       
       <motion.div

@@ -53,7 +53,8 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="relative bg-[#080808] flex flex-col">
+      {/* <main className="relative bg-[#080808] flex flex-col"> */}
+      <main className="relative w-full bg-black overflow-x-hidden">
         
         <a
           href="https://wa.me/"
